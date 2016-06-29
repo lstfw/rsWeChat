@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft Yahei", "微软雅黑", Tahoma, Arial, Helvetica, STHeiti;
+}
+.bg{
+    background: url("../img/bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    /*background: url("img/map.png") center no-repeat;
+    background-size: 100%;*/
+}
+.main img,.main div{
+    position: absolute;
+}
+.main .map{
+    position: static;
+}
+.main .stars{
+    width: 4.219%;
+}
+.main .stars1{
+    top: 32.636%;
+    left: 18.875%;
+}
+.main .stars2{
+    top: 54.588%;
+    left: 20.875%;
+}
+.main .stars3{
+    top: 56.892%;
+    left: 30.594%;
+}
+.main .stars4{
+    top: 68.951%;
+    left: 24.063%;
+}
+.main .stars5{
+    top: 76.404%;
+    left: 12.938%;
+}
+.main .title{
+    width: 12%;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+.main .title1{
+    top: 36.636%;
+    left: 14.875%;
+}
+.main .title2{
+    top: 58.588%;
+    left: 16.875%;
+}
+.main .title3{
+    top: 60.892%;
+    left: 26.594%;
+}
+.main .title4{
+    top: 72.951%;
+    left: 20.063%;
+}
+.main .title5{
+    top: 80.404%;
+    left: 8.938%;
+}
+.main .callBox{
+    width: 73.438%;
+    height: 27.1%;
+    left: 22.719%;
+    top: 22%;
+}
+.main .callBox .address{
+    width: 17.872%;
+}
+.main .callBox .call{
+    width: 26.596%;
+    top: 33%;
+}
+.main .callBox .postcode{
+    width: 45.106%;
+    top: 55%;
+}
+.main .callBox div{
+    font-size: 14px;
+    color: #fff;
+}
+.main .callBox .textAddress{
+    left: 20%;
+    top: 5%;
+}
+.main .callBox .textCall{
+    top: 38%;
+    left: 30%;
+}
+.main .callBox .textPostcode{
+    top: 75%;
+    left: 47%;
+}
+@-webkit-keyframes start {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform:scale(3,3)
+    }
+}
+.circle{
+    width: 6%;
+    top: 31.636%;
+    left: 17.7%;
+}
+.circle .circle1{
+    width: 100%;
+    -webkit-animation: start 1s linear 0.5s infinite;
+    opacity: 0;
+}
+.circle .circle2{
+    width: 100%;
+    -webkit-animation: start 1s linear 0s infinite;
+    opacity: 0;
+}

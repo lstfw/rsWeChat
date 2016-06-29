@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>联系我们</title>
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+</head>
+<body class="bg">
+
+<img class="title" src="img/mapTitle.png" width="100%">
+
+<div class="main">
+    <div class="circle">
+        <img class="circle1" src="img/circle3.png">
+        <img class="circle2" src="img/circle3.png">
+    </div>
+    <div id="callBox" class="callBox">
+        <img class="address" src="img/address.png">
+        <img class="call" src="img/call.png">
+        <img class="postcode" src="img/postcode.png">
+        <div class="textAddress">海淀区中关村南大街52号3号</div>
+        <div class="textCall">010-62123559</div>
+        <div class="textPostcode">100027</div>
+    </div>
+    <img class="map" src="img/map.png" width="100%">
+    <img class="stars stars1" data-id="0" src="img/stars2.png">
+    <img class="stars stars2" data-id="1" src="img/stars1.png">
+    <img class="stars stars3" data-id="2" src="img/stars1.png">
+    <img class="stars stars4" data-id="3" src="img/stars1.png">
+    <img class="stars stars5" data-id="4" src="img/stars1.png">
+    <div class="title title1">北京</div>
+    <div class="title title2">江苏</div>
+    <div class="title title3">上海</div>
+    <div class="title title4">福建</div>
+    <div class="title title5">深圳</div>
+
+
+
+
+</div>
+
+
+<script>
+    var t
+    window.onload = function(){
+        var loading = document.getElementById('callBox')
+        loading.setAttribute('class','callBox animated lightSpeedIn')
+        var title = document.getElementsByClassName('stars')
+        var index = 0;
+        for(var i=0;i<title.length;i++){
+            title[i].onclick = function(){
+                loading.setAttribute('class','callBox')
+                loading.style.opacity = 0
+                clearInterval(t)
+                for(var y = 0;y<title.length;y++){
+                    title[y].setAttribute('src','img/stars1.png')
+                }
+                this.setAttribute('src','img/stars2.png')
+                index = this.getAttribute('data-id')
+                move(index,loading)
+            }
+        }
+
+
+    }
+
+    function move(index,loading){
+        var data = [{
+            w:'22.719%',
+            h:'22%',
+            x:'17.7%',
+            y:'31.636%',
+            address:'海淀区中关村南大街52号3号楼',
+            call:'010-62123577',
+            postcode:'100027'
+        },{
+            w:'23.719%',
+            h:'43.5%',
+            x:'19.6%',
+            y:'53.636%',
+            address:'南京市建邺区南湖路',
+            call:'18923880190',
+            postcode:'210000'
+        },{
+            w:'32.719%',
+            h:'46%',
+            x:'29.5%',
+            y:'56%',
+            address:'上海浦东新区奉新路',
+            call:'18923880190',
+            postcode:'200000'
+        },{
+            w:'28.719%',
+            h:'58%',
+            x:'23%',
+            y:'68%',
+            address:'福建省福州市鼓楼区中心路',
+            call:'0591-63358819',
+            postcode:'350003'
+        },{
+            w:'17.719%',
+            h:'66%',
+            x:'12%',
+            y:'75.55%',
+            address:'深圳南山区华侨城',
+            call:'0755-26948777',
+            postcode:'518053'
+        }]
+
+        var textAddress = document.querySelector('.textAddress')
+        var textCall = document.querySelector('.textCall')
+        var textPostcode = document.querySelector('.textPostcode')
+        var circle = document.querySelector('.circle')
+        textAddress.innerHTML = data[index].address
+        textCall.innerHTML = data[index].call
+        textPostcode.innerHTML = data[index].postcode
+
+        loading.style.left =  data[index].w
+        loading.style.top =  data[index].h
+        circle.style.left =  data[index].x
+        circle.style.top =  data[index].y
+        t = setInterval(function(){
+            loading.style.opacity = 1
+            loading.setAttribute('class','callBox animated lightSpeedIn')
+        },300)
+
+    }
+</script>
+
+</body>
+</html>
